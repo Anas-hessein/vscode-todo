@@ -16,7 +16,9 @@ svelte JS, HTML, Css, json, typescript.
 <img width="1366" height="768" alt="Screenshot 2026-05-20 134501" src="https://github.com/user-attachments/assets/cd31a34b-0832-41ab-a2ba-19e406bfb063" />
 <img width="1366" height="768" alt="Screenshot 2026-05-20 053447" src="https://github.com/user-attachments/assets/0bf65f22-b5a0-4c9e-b124-3b86a3e86be1" />
 <img width="1149" height="694" alt="Screenshot 2026-05-19 183913" src="https://github.com/user-attachments/assets/89ab12ec-9ad3-4e6b-94d1-f42e5cf9d738" />
+
 ## how to try
-First, download the release, open it in Vs code, press F5. then a side icon of checklist will apper click it and you have now a todo-list.
+First, download the vs-todo-0.0.1.vsix file, open it in Vs code, press F5. then a side icon of checklist will apper click it and you have now a todo-list.
+
 ## video link 
 
