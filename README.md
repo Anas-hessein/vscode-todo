@@ -21,4 +21,4 @@ svelte JS, HTML, Css, json, typescript.
 First, download the vs-todo-0.0.1.vsix file, open it in Vs code, press F5. then a side icon of checklist will apper click it and you have now a todo-list.
 
 ## video link 
-
+ https://hackclub.enterprise.slack.com/files/U08DKSMHH1A/F0B56R2U1EG/20.05.2026_18.02.53_rec.mp4
