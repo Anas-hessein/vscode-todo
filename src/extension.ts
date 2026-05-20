@@ -33,11 +33,11 @@ export function activate(context: vscode.ExtensionContext) {
 	}));
 
 		context.subscriptions.push(vscode.commands.registerCommand('vs-todo.refresh', () => {
-		HalloWorldPanel.kill();
-		HalloWorldPanel.createOrShow(context.extensionUri); 
-		setTimeout(() => {
-			vscode.commands.executeCommand("workbench.action.webview.openDeveloperTools");
-		}, 500);
+		// HalloWorldPanel.kill();
+		// HalloWorldPanel.createOrShow(context.extensionUri); 
+		// setTimeout(() => {
+		// 	vscode.commands.executeCommand("workbench.action.webview.openDeveloperTools");
+		// }, 500);
 		
 	}));
 
