@@ -1,71 +1,22 @@
-# vs-todo README
+# VStodo
+## Info
+A visual studio code extension to save you to-do-list so make you more productive.
+## Function
+It have some small function which is:
+>
+1: adding a to-do missions
+>
+2: removing added to-do's
+## Proggraming Languages
+svelte JS, HTML, Css, json, typescript.
+## ScreenShots
+<img width="1366" height="768" alt="Screenshot 2026-05-19 135754" src="https://github.com/user-attachments/assets/7ab98cf7-0441-46b6-ac61-1fb92b28822e" />
+<img width="321" height="421" alt="Screenshot 2026-05-20 171729" src="https://github.com/user-attachments/assets/2e280dfc-4eb1-4d45-adb9-93df1573d6dc" />
+<img width="1198" height="667" alt="Screenshot 2026-05-20 143332" src="https://github.com/user-attachments/assets/d6e98bfb-77dc-4f59-9161-98778ffc3274" />
+<img width="1366" height="768" alt="Screenshot 2026-05-20 134501" src="https://github.com/user-attachments/assets/cd31a34b-0832-41ab-a2ba-19e406bfb063" />
+<img width="1366" height="768" alt="Screenshot 2026-05-20 053447" src="https://github.com/user-attachments/assets/0bf65f22-b5a0-4c9e-b124-3b86a3e86be1" />
+<img width="1149" height="694" alt="Screenshot 2026-05-19 183913" src="https://github.com/user-attachments/assets/89ab12ec-9ad3-4e6b-94d1-f42e5cf9d738" />
+## how to try
+First, download the release, open it in Vs code, press F5. then a side icon of checklist will apper click it and you have now a todo-list.
+## video link 
 
-This is the README for your extension "vs-todo". After writing up a brief description, we recommend including the following sections.
-
-## Features
-
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
