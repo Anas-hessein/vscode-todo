@@ -7,9 +7,16 @@ declare const console: {
 	error: (...args: any[]) => void;
 };
 import { HalloWorldPanel } from './HalloWorldPanel';
+import { SidebarProvider } from './SidebarProvider';
 
 export function activate(context: vscode.ExtensionContext) {
-	console.log('Congratulations, your extension "vs-todo" is now active!');
+	const sidebarProvider = new SidebarProvider(context.extensionUri);
+  	context.subscriptions.push(
+   		vscode.window.registerWebviewViewProvider(
+    		"vs-todo-sidebar",
+    		sidebarProvider
+    )
+  );
 
 	context.subscriptions.push(vscode.commands.registerCommand('vs-todo.helloWorld', () => {
 		HalloWorldPanel.createOrShow(context.extensionUri);
@@ -23,6 +30,15 @@ export function activate(context: vscode.ExtensionContext) {
 		} else {
 			console.log(answer)
 		}
+	}));
+
+		context.subscriptions.push(vscode.commands.registerCommand('vs-todo.refresh', () => {
+		HalloWorldPanel.kill();
+		HalloWorldPanel.createOrShow(context.extensionUri); 
+		setTimeout(() => {
+			vscode.commands.executeCommand("workbench.action.webview.openDeveloperTools");
+		}, 500);
+		
 	}));
 
 }

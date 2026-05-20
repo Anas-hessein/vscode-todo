@@ -10,11 +10,33 @@
     "Other"
   ],
   "activationEvents": [
+    "onView:vs-todo-sidebar",
     "onCommand:vs-todo.helloWorld",
-    "onCommand:vs-todo.askQuestion"
+    "onCommand:vs-todo.askQuestion",
+    "onCommand:vs-todo.refresh"
   ],
   "main": "./dist/extension.js",
   "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "vs-todo-sidebar-view",
+          "title": "VStodo",
+          "icon": "media/checklist.svg"
+        }
+      ]
+    },
+    "views": {
+      "vs-todo-sidebar-view": [
+        {
+          "type": "webview",
+          "id": "vs-todo-sidebar",
+          "name": "VStodo",
+          "icon": "media/checklist.svg",
+          "contextualTitle": "VStodo"
+        }
+      ]
+    },
     "commands": [
       {
         "command": "vs-todo.helloWorld",
@@ -25,13 +47,20 @@
         "command": "vs-todo.askQuestion",
         "category": "vs-todo",
         "title": "Ask Question"
+      },
+      {
+        "command": "vs-todo.refresh",
+        "category": "vs-todo",
+        "title": "Refresh"
       }
     ]
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
     "compile": "webpack",
-    "watch": "webpack --watch",
+    "watch": "webpack --mode development --watch",
+    "watch:all": "concurrently \"rollup -c -w\" \"webpack --mode development --watch\"",
+    "build:svelte": "rollup -c",
     "package": "webpack --mode production --devtool hidden-source-map",
     "compile-tests": "tsc -p . --outDir out",
     "watch-tests": "tsc -p . -w --outDir out",
@@ -40,16 +69,27 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.120.0",
+    "@rollup/plugin-commonjs": "^29.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-terser": "^1.0.0",
+    "@rollup/plugin-typescript": "^12.3.0",
+    "@tsconfig/svelte": "^5.0.8",
     "@types/mocha": "^10.0.10",
     "@types/node": "22.x",
-    "typescript-eslint": "^8.56.1",
+    "@types/vscode": "^1.120.0",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
+    "concurrently": "^9.2.1",
     "eslint": "^9.39.3",
-    "typescript": "^5.9.3",
+    "rollup": "^4.60.4",
+    "rollup-plugin-svelte": "^7.2.3",
+    "svelte": "^5.55.8",
+    "svelte-check": "^4.4.8",
+    "svelte-preprocess": "^6.0.3",
     "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1",
     "webpack": "^5.105.3",
-    "webpack-cli": "^6.0.1",
-    "@vscode/test-cli": "^0.0.12",
-    "@vscode/test-electron": "^2.5.2"
+    "webpack-cli": "^6.0.1"
   }
 }

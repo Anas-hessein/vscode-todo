@@ -1,16 +1,20 @@
 import svelte from "rollup-plugin-svelte";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
-import { terser } from "rollup-plugin-terser";
+import terser from "@rollup/plugin-terser";
 import sveltePreprocess from "svelte-preprocess";
-import typescript from "@rollup/plugin-typescript";
 import path from "path";
 import fs from "fs";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const production = !process.env.ROLLUP_WATCH;
 
 export default fs
-  .readdirSync(path.join(__dirname, "webviews", "pages"))
+  .readdirSync(path.join(__dirname, "svelte-stuff", "pages"))
+  .filter((input) => input.endsWith(".js"))
   .map((input) => {
     const name = input.split(".")[0];
     return {
@@ -23,14 +27,12 @@ export default fs
       },
       plugins: [
         svelte({
-          // enable run-time checks when not in production
-          dev: !production,
-          // we'll extract any component CSS out into
-          // a separate file - better for performance
-          css: (css) => {
-            css.write(name + ".css");
-          },
+          // Use new plugin API: pass Svelte compiler options under `compilerOptions`.
+          compilerOptions: { dev: !production },
+          // Keep preprocessing enabled
           preprocess: sveltePreprocess(),
+          // Emit CSS into the JS bundle (no separate CSS file)
+          emitCss: false,
         }),
 
         // If you have external dependencies installed from
@@ -43,11 +45,6 @@ export default fs
           dedupe: ["svelte"],
         }),
         commonjs(),
-        typescript({
-          tsconfig: "svelte-stuff/tsconfig.json",
-          sourceMap: !production,
-          inlineSources: !production,
-        }),
 
         // In dev mode, call `npm run start` once
         // the bundle has been generated

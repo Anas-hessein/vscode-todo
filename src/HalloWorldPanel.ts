@@ -121,7 +121,7 @@ export class HalloWorldPanel {
 
   private _getHtmlForWebview(webview: vscode.Webview) {
     const scriptUri = webview.asWebviewUri(
-      vscode.Uri.joinPath(this._extensionUri, "media", "main.js")
+      vscode.Uri.joinPath(this._extensionUri, "out/compiled", "index.js")
     );
 
 
@@ -163,9 +163,6 @@ export class HalloWorldPanel {
         </script>
 			</head>
             <body>
-            <h1>Hallo Anas</h1>
-            <input type="text"></input>
-            <button>ooooooooooooooh</button>
 			</body>
               <script src="${scriptUri}" nonce="${nonce}"></script>
 			</html>`;
